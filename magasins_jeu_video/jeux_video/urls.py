@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('index/', views.index),
-    path('ajout', views.ajout),
+    path('ajout/', views.ajout),
+    path('formulaire/', views.formulaire),
 ]

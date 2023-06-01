@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import JeuxVideoForm
+from .forms import JeuxVideosForm
 from . import models
 
 def index(request):
@@ -11,12 +11,15 @@ def bonjour(request):
 
 def ajout(request):
     if request.method == "POST":
-        form = JeuxVideoForm(request)
+        form = JeuxVideosForm(request)
         if form.is_valid():
             livre = form.save()
-            return render(request,"/bibliotheque/affiche.html",{"livre" : livre})
+            return render(request,"/jeux_videos/ajout.html",{"jeuxvideos" : jeuxvideos})
         else:
-                return render(request,"bibliotheque/ajout.html",{"form": form})
+                return render(request,"jeux_video/ajout.html",{"form": form})
     else :
         form = JeuxVideoForm() # création d'un formulaire vide
-        return render(request,"bibliotheque/ajout.html",{"form" : form})
+        return render(request,"jeux_video/ajout.html",{"form" : form})
+
+def formulaire(request):
+        return render(request, 'jeux_video/formulaire.html')
