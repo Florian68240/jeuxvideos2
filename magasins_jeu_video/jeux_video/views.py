@@ -13,8 +13,8 @@ def ajout(request):
     if request.method == "POST":
         form = JeuxVideosForm(request)
         if form.is_valid():
-            livre = form.save()
-            return render(request,"/jeux_videos/ajout.html",{"jeuxvideos" : jeuxvideos})
+            JeuxVideos = form.save()
+            return render(request,"jeux_videos/ajout.html",{"jeuxvideos" : jeuxvideos})
         else:
                 return render(request,"jeux_video/ajout.html",{"form": form})
     else :

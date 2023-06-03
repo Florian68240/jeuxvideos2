@@ -8,7 +8,8 @@
     <form method="post" action="/jeux_videos/traitement">
         {% csrf_token %}
         {{ form.as_ul }}
-        <input type="submit" value="envoyer␣les␣données"\>
+        <input type="submit" value="envoyer les données"\>
+        <a href="/jeux_videos/index/"> retournez à la page d'accueil</a>
     </form>
 </body>
 </html>
