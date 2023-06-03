@@ -15,3 +15,8 @@ class JeuxVideos(models.Model):
     def __str__(self):
         chaine = f"{self.nom} développé par {self.developper} sorti le{self.date_de_sortie} est un {self.type}"
         return chaine
+
+    def dic(self):
+        return {"nom": self.nom, "developper": self.developper, "date_de_sortie": self.date_de_sortie,
+                "type": self.type }
+

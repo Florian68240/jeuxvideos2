@@ -5,11 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    <form method="post" action="/jeux_videos/traitement">
+    <form method="post" action="/jeux_video/traitement">
         {% csrf_token %}
         {{ form.as_ul }}
         <input type="submit" value="envoyer les données"\>
-        <a href="/jeux_videos/index/"> retournez à la page d'accueil</a>
+        <a href="/jeux_video/index/"> retournez à la page d'accueil</a>
     </form>
 </body>
 </html>
