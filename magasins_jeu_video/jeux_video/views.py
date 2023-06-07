@@ -39,7 +39,7 @@ def affiche(request, id):
 def delete(request, id):
     suppr = models.jeux_video.objects.get(pk=id)
     suppr.delete()
-    return HttpResponseRedirect("/mesmineraux/index/", )
+    return HttpResponseRedirect("/jeuxvideo/index/", )
 
 
 def update(request, id):
