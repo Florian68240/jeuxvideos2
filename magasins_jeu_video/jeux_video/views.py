@@ -43,7 +43,7 @@ def delete(request, id):
 
 
 def update(request, id):
-    pierre = models.jeux_video.objects.get(pk=id)
+    Jeux_video = models.jeux_video.objects.get(pk=id)
     aform = JeuxVideosForm(jeux_video.dic())
     return render(request, "jeux_video/ajoutupdate.html/", {"form": aform, "id": id})
 
@@ -51,9 +51,9 @@ def updatetraitement(request, id):
     aform = JeuxVideosForm(request.POST)
     saveid = id
     if aform.is_valid():
-        jeux_video = aform.save(commit = False)
-        jeux_video.id = saveid
-        jeux_video.save()
-        return HttpResponseRedirect("/mesmineraux/index/")
+        Jeux_video = aform.save(commit = False)
+        Jeux_video.id = saveid
+        Jeux_video.save()
+        return HttpResponseRedirect("/jeux_video/index/")
     else:
-        return render(request, "mesmineraux/ajoutupdate.html", {"form": aform})
+        return render(request, "jeuxvideo/ajoutupdate.html", {"form": aform})
